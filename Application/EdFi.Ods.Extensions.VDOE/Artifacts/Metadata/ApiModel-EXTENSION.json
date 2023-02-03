@@ -1,0 +1,375 @@
+{
+  "odsApiVersion": "6.0",
+  "schemaDefinition": {
+    "logicalName": "VDOE",
+    "physicalName": "vdoe",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "aggregateDefinitions": [],
+  "aggregateExtensionDefinitions": [],
+  "entityDefinitions": [
+    {
+      "schema": "vdoe",
+      "name": "GradebookEntryExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        },
+        {
+          "propertyName": "MaximumScorePossible",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Maximum possible score for assignment",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MaximumScorePossible",
+            "postgreSql": "MaximumScorePossible"
+          }
+        },
+        {
+          "propertyName": "MinimumScorePossible",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "Minimum possible score for assignment",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "MinimumScorePossible",
+            "postgreSql": "MinimumScorePossible"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "GradebookEntryExtension_PK",
+          "identifyingPropertyNames": [
+            "GradebookEntryIdentifier",
+            "Namespace"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "GradebookEntryExtension_PK",
+            "postgreSql": "GradebookEntryExtension_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "",
+      "tableNames": {
+        "sqlServer": "GradebookEntryExtension",
+        "postgreSql": "GradebookEntryExtension"
+      }
+    },
+    {
+      "schema": "vdoe",
+      "name": "StudentGradebookEntryExtension",
+      "locallyDefinedProperties": [
+        {
+          "propertyName": "ActualScore",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": true
+          },
+          "description": "The actual score a student earned on an assignment",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "ActualScore",
+            "postgreSql": "ActualScore"
+          }
+        },
+        {
+          "propertyName": "CreateDate",
+          "propertyType": {
+            "dbType": "DateTime2",
+            "maxLength": 0,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "",
+          "isIdentifying": false,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "CreateDate",
+            "postgreSql": "CreateDate"
+          }
+        }
+      ],
+      "identifiers": [
+        {
+          "identifierName": "StudentGradebookEntryExtension_PK",
+          "identifyingPropertyNames": [
+            "GradebookEntryIdentifier",
+            "Namespace",
+            "StudentUSI"
+          ],
+          "isPrimary": true,
+          "isUpdatable": false,
+          "constraintNames": {
+            "sqlServer": "StudentGradebookEntryExtension_PK",
+            "postgreSql": "StudentGradebookEntryExtension_PK"
+          }
+        }
+      ],
+      "isAbstract": false,
+      "description": "",
+      "tableNames": {
+        "sqlServer": "StudentGradebookEntryExtension",
+        "postgreSql": "StudentGradebookEntryExtension"
+      }
+    }
+  ],
+  "associationDefinitions": [
+    {
+      "fullName": {
+        "schema": "vdoe",
+        "name": "FK_GradebookEntryExtension_GradebookEntry"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "GradebookEntry"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "GradebookEntryIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a gradebook entry by the source system.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradebookEntryIdentifier",
+            "postgreSql": "GradebookEntryIdentifier"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace URI for the source of the gradebook entry.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "vdoe",
+        "name": "GradebookEntryExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "GradebookEntryIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a gradebook entry by the source system.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradebookEntryIdentifier",
+            "postgreSql": "GradebookEntryIdentifier"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace URI for the source of the gradebook entry.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_GradebookEntryExtension_GradebookEntry",
+        "postgreSql": "FK_8342b2_GradebookEntry"
+      }
+    },
+    {
+      "fullName": {
+        "schema": "vdoe",
+        "name": "FK_StudentGradebookEntryExtension_StudentGradebookEntry"
+      },
+      "cardinality": "OneToOneExtension",
+      "primaryEntityFullName": {
+        "schema": "edfi",
+        "name": "StudentGradebookEntry"
+      },
+      "primaryEntityProperties": [
+        {
+          "propertyName": "GradebookEntryIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a gradebook entry by the source system.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradebookEntryIdentifier",
+            "postgreSql": "GradebookEntryIdentifier"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace URI for the source of the gradebook entry.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "secondaryEntityFullName": {
+        "schema": "vdoe",
+        "name": "StudentGradebookEntryExtension"
+      },
+      "secondaryEntityProperties": [
+        {
+          "propertyName": "GradebookEntryIdentifier",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 60,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique number or alphanumeric code assigned to a gradebook entry by the source system.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "GradebookEntryIdentifier",
+            "postgreSql": "GradebookEntryIdentifier"
+          }
+        },
+        {
+          "propertyName": "Namespace",
+          "propertyType": {
+            "dbType": "String",
+            "maxLength": 255,
+            "precision": 0,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "Namespace URI for the source of the gradebook entry.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "Namespace",
+            "postgreSql": "Namespace"
+          }
+        },
+        {
+          "propertyName": "StudentUSI",
+          "propertyType": {
+            "dbType": "Int32",
+            "maxLength": 0,
+            "precision": 10,
+            "scale": 0,
+            "isNullable": false
+          },
+          "description": "A unique alphanumeric code assigned to a student.",
+          "isIdentifying": true,
+          "isServerAssigned": false,
+          "columnNames": {
+            "sqlServer": "StudentUSI",
+            "postgreSql": "StudentUSI"
+          }
+        }
+      ],
+      "isIdentifying": true,
+      "isRequired": true,
+      "constraintNames": {
+        "sqlServer": "FK_StudentGradebookEntryExtension_StudentGradebookEntry",
+        "postgreSql": "FK_c1d2f5_StudentGradebookEntry"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Domain Entity EdFi.GradebookEntry additions
+  integer MaximumScorePossible
+  documentation "Maximum possible score for assignment"
+  is optional
+  integer MinimumScorePossible
+  documentation "Minimum possible score for assignment"
+  is optional

@@ -1,0 +1,4 @@
+Domain Entity EdFi.StudentGradebookEntry additions
+    integer ActualScore
+        documentation "The actual score a student earned on an assignment"
+        is optional
