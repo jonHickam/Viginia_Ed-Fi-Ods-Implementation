@@ -27,6 +27,7 @@
               <xs:documentation>Minimum possible score for assignment</xs:documentation>
             </xs:annotation>
           </xs:element>
+<<<<<<< HEAD
           <xs:element name="ScoreType" type="EXTENSION-ScoreTypeDescriptorReferenceType" minOccurs="0">
             <xs:annotation>
               <xs:documentation>Type of Score</xs:documentation>
@@ -35,6 +36,8 @@
               </xs:appinfo>
             </xs:annotation>
           </xs:element>
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -61,6 +64,7 @@
   <xs:annotation>
     <xs:documentation>===== Descriptors =====</xs:documentation>
   </xs:annotation>
+<<<<<<< HEAD
   <xs:complexType name="EXTENSION-ScoreTypeDescriptor">
     <xs:annotation>
       <xs:documentation>Type of score for a grandebook entry.</xs:documentation>
@@ -72,6 +76,8 @@
       <xs:extension base="DescriptorType" />
     </xs:complexContent>
   </xs:complexType>
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
   <xs:annotation>
     <xs:documentation>===== Associations =====</xs:documentation>
   </xs:annotation>
@@ -81,6 +87,7 @@
   <xs:annotation>
     <xs:documentation>===== Extended Descriptor Reference Types =====</xs:documentation>
   </xs:annotation>
+<<<<<<< HEAD
   <xs:simpleType name="EXTENSION-ScoreTypeDescriptorReferenceType">
     <xs:annotation>
       <xs:documentation>Type of score for a grandebook entry.</xs:documentation>
@@ -90,6 +97,8 @@
     </xs:annotation>
     <xs:restriction base="DescriptorReferenceType" />
   </xs:simpleType>
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
   <xs:annotation>
     <xs:documentation>===== Common Types =====</xs:documentation>
   </xs:annotation>

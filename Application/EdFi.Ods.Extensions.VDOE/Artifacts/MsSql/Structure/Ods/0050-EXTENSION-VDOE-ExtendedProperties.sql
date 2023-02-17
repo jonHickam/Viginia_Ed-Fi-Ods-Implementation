@@ -9,6 +9,7 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Maximum possib
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Minimum possible score for assignment', @level0type=N'SCHEMA', @level0name=N'vdoe', @level1type=N'TABLE', @level1name=N'GradebookEntryExtension', @level2type=N'COLUMN', @level2name=N'MinimumScorePossible'
 GO
+<<<<<<< HEAD
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Type of Score', @level0type=N'SCHEMA', @level0name=N'vdoe', @level1type=N'TABLE', @level1name=N'GradebookEntryExtension', @level2type=N'COLUMN', @level2name=N'ScoreTypeDescriptorId'
 GO
 
@@ -17,6 +18,8 @@ EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Type of score 
 GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.', @level0type=N'SCHEMA', @level0name=N'vdoe', @level1type=N'TABLE', @level1name=N'ScoreTypeDescriptor', @level2type=N'COLUMN', @level2name=N'ScoreTypeDescriptorId'
 GO
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
 
 -- Extended Properties [vdoe].[StudentGradebookEntryExtension] --
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'', @level0type=N'SCHEMA', @level0name=N'vdoe', @level1type=N'TABLE', @level1name=N'StudentGradebookEntryExtension'

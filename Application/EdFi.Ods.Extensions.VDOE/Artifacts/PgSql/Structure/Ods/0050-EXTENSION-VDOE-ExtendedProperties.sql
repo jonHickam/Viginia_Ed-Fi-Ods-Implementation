@@ -4,11 +4,14 @@ COMMENT ON COLUMN vdoe.GradebookEntryExtension.GradebookEntryIdentifier IS 'A un
 COMMENT ON COLUMN vdoe.GradebookEntryExtension.Namespace IS 'Namespace URI for the source of the gradebook entry.';
 COMMENT ON COLUMN vdoe.GradebookEntryExtension.MaximumScorePossible IS 'Maximum possible score for assignment';
 COMMENT ON COLUMN vdoe.GradebookEntryExtension.MinimumScorePossible IS 'Minimum possible score for assignment';
+<<<<<<< HEAD
 COMMENT ON COLUMN vdoe.GradebookEntryExtension.ScoreTypeDescriptorId IS 'Type of Score';
 
 -- Extended Properties [vdoe].[ScoreTypeDescriptor] --
 COMMENT ON TABLE vdoe.ScoreTypeDescriptor IS 'Type of score for a grandebook entry.';
 COMMENT ON COLUMN vdoe.ScoreTypeDescriptor.ScoreTypeDescriptorId IS 'A unique identifier used as Primary Key, not derived from business logic, when acting as Foreign Key, references the parent table.';
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
 
 -- Extended Properties [vdoe].[StudentGradebookEntryExtension] --
 COMMENT ON TABLE vdoe.StudentGradebookEntryExtension IS '';

@@ -4,7 +4,10 @@ CREATE TABLE [vdoe].[GradebookEntryExtension] (
     [Namespace] [NVARCHAR](255) NOT NULL,
     [MaximumScorePossible] [INT] NULL,
     [MinimumScorePossible] [INT] NULL,
+<<<<<<< HEAD
     [ScoreTypeDescriptorId] [INT] NULL,
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
     [CreateDate] [DATETIME2] NOT NULL,
     CONSTRAINT [GradebookEntryExtension_PK] PRIMARY KEY CLUSTERED (
         [GradebookEntryIdentifier] ASC,
@@ -15,6 +18,7 @@ GO
 ALTER TABLE [vdoe].[GradebookEntryExtension] ADD CONSTRAINT [GradebookEntryExtension_DF_CreateDate] DEFAULT (getdate()) FOR [CreateDate]
 GO
 
+<<<<<<< HEAD
 -- Table [vdoe].[ScoreTypeDescriptor] --
 CREATE TABLE [vdoe].[ScoreTypeDescriptor] (
     [ScoreTypeDescriptorId] [INT] NOT NULL,
@@ -24,6 +28,8 @@ CREATE TABLE [vdoe].[ScoreTypeDescriptor] (
 ) ON [PRIMARY]
 GO
 
+=======
+>>>>>>> 3f851901da7e3872996365a5a516d08399b9ae44
 -- Table [vdoe].[StudentGradebookEntryExtension] --
 CREATE TABLE [vdoe].[StudentGradebookEntryExtension] (
     [GradebookEntryIdentifier] [NVARCHAR](60) NOT NULL,
